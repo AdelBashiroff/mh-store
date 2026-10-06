@@ -36,7 +36,7 @@
             const longest = Math.max(...p.lines.map(l => l.length));
             const size = Math.min(p.size || 46, maxW / (longest * 0.62));
             return p.lines.map((l, i) =>
-                `<text x="${cx}" y="${cy + i * size * 1.05}" text-anchor="middle" font-family="Archivo Black, Impact, sans-serif" font-size="${size.toFixed(1)}" fill="${ink}" letter-spacing="1">${l}</text>`
+                `<text x="${cx}" y="${cy + i * size * 1.05}" text-anchor="middle" font-family="Amp, Archivo Black, Impact, sans-serif" font-size="${size.toFixed(1)}" fill="${ink}" letter-spacing="1">${l}</text>`
             ).join('');
         }
         if (p.stain) {
@@ -130,7 +130,7 @@ ${extra}
         const one = () => piece(sock, hex, k, { clip: `<ellipse cx="240" cy="352" rx="42" ry="48" fill="rgba(0,0,0,.14)"/><ellipse cx="86" cy="356" rx="30" ry="36" fill="rgba(0,0,0,.14)"/>` }) +
             `<path d="M170 40 L262 40 L262 86 L170 86Z" fill="${shade(hex, -0.08)}" stroke="${shade(hex, -0.4)}" stroke-width="2"/>
 <path d="M170 56 L262 56 M170 70 L262 70" stroke="${stripe}" stroke-width="6"/>
-<text x="216" y="190" text-anchor="middle" font-family="Archivo Black, Impact, sans-serif" font-size="58" fill="${shade(hex, lum(hex) > 0.5 ? -0.5 : 0.6)}" opacity=".8">Л</text>`;
+<text x="216" y="190" text-anchor="middle" font-family="Amp, Archivo Black, Impact, sans-serif" font-size="58" fill="${shade(hex, lum(hex) > 0.5 ? -0.5 : 0.6)}" opacity=".8">Л</text>`;
         return `<g transform="translate(-14 4) scale(.84)">${one()}</g><g transform="translate(116 66) scale(.84)">${one()}</g>`;
     };
 
@@ -141,7 +141,7 @@ ${extra}
         return piece(brim, shade(hex, -0.12), k) + piece(dome, hex, k) +
             `<path d="M200 132 Q172 220 152 306 M200 132 Q228 220 248 306 M200 132 Q132 196 96 290 M200 132 Q268 196 304 290" fill="none" stroke="${line}" stroke-width="2" stroke-dasharray="5 4"/>
 <circle cx="200" cy="130" r="9" fill="${shade(hex, -0.14)}" stroke="${shade(hex, -0.4)}" stroke-width="2"/>
-<text x="200" y="250" text-anchor="middle" font-family="Archivo Black, Impact, sans-serif" font-size="40" fill="${lum(hex) > 0.55 ? '#d4001a' : '#fff'}">M&amp;H</text>
+<text x="200" y="250" text-anchor="middle" font-family="Amp, Archivo Black, Impact, sans-serif" font-size="40" fill="${lum(hex) > 0.55 ? '#d4001a' : '#fff'}">M&amp;H</text>
 <path d="M96 306 Q200 326 304 306" fill="none" stroke="${line}" stroke-width="2"/>`;
     };
 
