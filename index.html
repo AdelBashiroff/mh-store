@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>M&H — интернет-магазин одежды (пародия)</title>
+<meta name="description" content="M&H — пародийный интернет-магазин: каталог, фильтры, корзина, промокоды и оформление заказа. Демо-проект, всё вымышлено.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23e50010'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-family='Arial Black,Impact' font-size='30' fill='white'%3EM%26H%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="page" id="page">
+    <div class="topbar" aria-label="Объявления">
+        <div class="topbar-track" id="topbar-track"></div>
+    </div>
+
+    <header class="header" id="header">
+        <div class="header-inner">
+            <button class="icon-btn burger" data-act="toggle-menu" aria-label="Меню" aria-expanded="false">
+                <svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+            </button>
+
+            <a href="#/" class="logo" id="logo" aria-label="M&H — на главную">
+                <span class="logo-m">M</span><span class="logo-amp">&amp;</span><span class="logo-h">H</span>
+            </a>
+
+            <nav class="nav" id="nav" aria-label="Категории">
+                <a href="#/catalog?sale=1" class="nav-sale">Распродажа</a>
+                <a href="#/catalog?cat=women">Женщинам</a>
+                <a href="#/catalog?cat=men">Мужчинам</a>
+                <a href="#/catalog?cat=kids">Детям</a>
+                <a href="#/catalog?cat=cats">Котам</a>
+                <a href="#/catalog?cat=acc">Аксессуары</a>
+                <a href="#/about">О нас (и о сходстве)</a>
+            </nav>
+
+            <div class="header-tools">
+                <form class="search" id="search-form" role="search" autocomplete="off">
+                    <svg viewBox="0 0 24 24" class="search-ico"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+                    <input type="search" id="search-input" placeholder="Поиск: футболка, кот…" aria-label="Поиск по каталогу">
+                    <div class="suggest" id="suggest" hidden></div>
+                </form>
+                <button class="icon-btn" data-act="toggle-mirror" id="mirror-btn" aria-label="Отзеркалить сайт" title="Отзеркалить сайт">
+                    <svg viewBox="0 0 24 24"><path d="M12 3v18M8 7L3 12l5 5V7zM16 7l5 5-5 5V7z"/></svg>
+                </button>
+                <a class="icon-btn" href="#/orders" aria-label="Мои заказы" title="Мои заказы">
+                    <svg viewBox="0 0 24 24"><path d="M6 7h12l1 13H5L6 7zM9 7a3 3 0 016 0"/></svg>
+                </a>
+                <a class="icon-btn" href="#/wishlist" aria-label="Избранное" title="Избранное">
+                    <svg viewBox="0 0 24 24"><path d="M12 20s-7-4.5-8.5-9A4.7 4.7 0 0112 6.6 4.7 4.7 0 0120.5 11C19 15.5 12 20 12 20z"/></svg>
+                    <span class="badge" id="wish-count" hidden>0</span>
+                </a>
+                <button class="icon-btn" data-act="open-cart" aria-label="Корзина" title="Корзина">
+                    <svg viewBox="0 0 24 24"><path d="M5 8h14l-1 12H6L5 8zM9 8V6a3 3 0 016 0v2"/></svg>
+                    <span class="badge" id="cart-count" hidden>0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main id="view" tabindex="-1"></main>
+
+    <footer class="footer">
+        <div class="footer-grid">
+            <div>
+                <div class="logo logo-foot"><span>M</span>&amp;<span>H</span></div>
+                <p class="footer-text">Мода для тех, кто умеет читать названия на этикетке. Нас часто путают, и мы это ценим.</p>
+            </div>
+            <div>
+                <h4>Магазин</h4>
+                <a href="#/catalog">Весь каталог</a>
+                <a href="#/catalog?sale=1">Распродажа</a>
+                <a href="#/wishlist">Избранное</a>
+                <a href="#/orders">Мои заказы</a>
+            </div>
+            <div>
+                <h4>Помощь</h4>
+                <a href="#/about">Доставка и возврат</a>
+                <a href="#/about">Таблица размеров (H — это почти L)</a>
+                <a href="#/about">Вопросы и ответы</a>
+            </div>
+            <div>
+                <h4>Клуб M&amp;H Member</h4>
+                <p class="footer-text">Копите баллы за покупки. Баллы нельзя потратить, но на них приятно смотреть.</p>
+            </div>
+        </div>
+        <p class="disclaimer">
+            Это учебный демо-проект и пародия. Не связан с H&amp;M Hennes &amp; Mauritz AB или любой другой реальной компанией.
+            Все товары, цены, отзывы и бренды вымышлены. Деньги не списываются, данные никуда не отправляются.
+        </p>
+        <p class="copy">© 2026 M&amp;H. Все права отзеркалены. <a href="https://github.com/AdelBashiroff/mh-store" target="_blank" rel="noopener">Исходный код</a></p>
+    </footer>
+</div>
+
+<!-- Корзина -->
+<div class="overlay" id="overlay" data-act="close-all" hidden></div>
+<aside class="drawer" id="drawer" aria-label="Корзина" aria-hidden="true">
+    <div class="drawer-head">
+        <h3>Корзина <span id="drawer-count"></span></h3>
+        <button class="icon-btn" data-act="close-cart" aria-label="Закрыть корзину"><svg viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19"/></svg></button>
+    </div>
+    <div class="drawer-body" id="drawer-body"></div>
+    <div class="drawer-foot" id="drawer-foot"></div>
+</aside>
+
+<!-- Модальное окно -->
+<div class="modal" id="modal" hidden role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-box" id="modal-box"></div>
+</div>
+
+<div class="toasts" id="toasts" aria-live="polite"></div>
+<div class="cookie" id="cookie" hidden></div>
+
+<script src="data.js"></script>
+<script src="art.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
